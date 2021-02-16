@@ -1,0 +1,13 @@
+# --------------------------
+# Se pueden escribir comentarios
+# --------------
+
+CONFIRM:	check, uncheck
+OPEN:		check, uncheck
+PROMPT:		check, uncheck
+PLAY:		check, uncheck
+SHOW:		check, uncheck
+USE:		check, uncheck
+RULER:		in, cm, mm
+SHEETS:		1,40,100
+

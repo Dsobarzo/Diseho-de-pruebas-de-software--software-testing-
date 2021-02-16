@@ -1,0 +1,26 @@
+PLATFORM: x86, ia64, amd64
+CPUS:     Single, Dual, Quad
+RAM:      128MB, 1GB, 4GB, 64GB
+HDD:      SCSI, IDE
+OS:       NT4, Win2K, WinXP, Win2K3
+IE:       4.0, 5.0, 5.5, 6.0
+
+# -------------------------------------------------------------------------
+# Separamos los submodelos para hw y sw para hacer las
+# configuraciones de hw menos variantes y bajar costos
+# -------------------------------------------------------------------------
+
+{ PLATFORM, CPUS, RAM, HDD } @ 2
+{ OS, IE } @ 2
+
+# -------------------------------------------------------------------------
+# Las restricciones pueden cruzar submodelos
+# -------------------------------------------------------------------------
+
+IF [PLATFORM] in {"ia64", "amd64"} THEN [OS] in {"WinXP", "Win2K3"};
+
+# ------------------------------------------------------------------------
+# Tambien funcionan las restricciones para el mismo modelo
+# ------------------------------------------------------------------------
+
+IF [PLATFORM] = "x86" THEN [RAM] <> "64GB";
